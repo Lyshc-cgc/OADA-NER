@@ -1,0 +1,56 @@
+# Attention! ALL paths must be relative to the 'run.py' file!
+
+dataset_name: mit_movie
+file_path: data/mit_movie/mit_movie
+num_proc: 4  # the number of processes to preprocess the data
+nested: False  # whether the entities are nested
+
+# process config
+tokens_field: tokens  # the field name of the tokens, please make sure the field name is consistent with the data
+ner_tags_field: ner_tags  # the field name of the NER tag, please make sure the field name is consistent with the data
+data_batch_size: 4096 # batch size for data processing
+preprocessed_dir: data/mit_movie/preprocess  # the directory to store the preprocessed data
+ss_cache_dir: data/mit_movie/support_set  # the directory to store the support set cache
+
+labels:
+  ACTOR: actor
+  TITLE: title
+  YEAR: year
+  GENRE: genre
+  PLOT: plot
+  DIRECTOR: director
+  RATINGS_AVERAGE: ratings average
+  RATING: rating
+  CHARACTER: character
+  SONG: song
+  REVIEW: review
+  TRAILER: trailer
+
+raw_bio: True  # a flag to indicate whether the labels are in BIO format in the raw dataset.(data/*/raw/*)
+raw_label2id:  # the label2id mapping in the raw datasets. (data/*/raw/*)
+  O: 0
+  B-ACTOR: 1
+  I-ACTOR: 2
+  B-TITLE: 3
+  I-TITLE: 4
+  B-YEAR: 5
+  I-YEAR: 6
+  B-GENRE: 7
+  I-GENRE: 8
+  B-PLOT: 9
+  I-PLOT: 10
+  B-DIRECTOR: 11
+  I-DIRECTOR: 12
+  B-RATINGS_AVERAGE: 13
+  I-RATINGS_AVERAGE: 14
+  B-RATING: 15
+  I-RATING: 16
+  B-CHARACTER: 17
+  I-CHARACTER: 18
+  B-SONG: 19
+  I-SONG: 20
+  B-REVIEW: 21
+  I-REVIEW: 22
+  B-TRAILER: 23
+  I-TRAILER: 24
+

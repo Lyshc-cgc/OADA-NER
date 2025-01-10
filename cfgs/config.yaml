@@ -1,0 +1,15 @@
+train: true
+test: false
+k_shot: 50  # if > 0, use k-shot learning
+seed: 22
+model_name_or_path: ./model/facebook/bart-large  # facebook/bart-large
+natural_label: False  # whether to use the natural label
+early_stopping_patience: 5  # early stopping patience
+augmentation: oada  # lsp, baseline
+rearrangement_num: 20  # the number of rearrangement
+negative: False  # whether to use negative examples(i.e., empty target sequence)
+
+defaults:
+  - _self_
+  - dataset: conll2003
+  - training_args: 5_shot

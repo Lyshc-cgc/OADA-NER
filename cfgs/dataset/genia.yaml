@@ -1,0 +1,29 @@
+# Attention! ALL paths must be relative to the 'run.py' file!
+
+dataset_name: genia
+file_path: data/genia/genia_ner.py
+num_proc: 4  # the number of processes to preprocess the data
+nested: True  # whether the entities are nested
+
+# process config
+tokens_field: tokens  # the field name of the tokens, please make sure the field name is consistent with the data
+ner_tags_field: ner_tags  # the field name of the NER tag, please make sure the field name is consistent with the data
+data_batch_size: 4096 # batch size for data processing
+preprocessed_dir: data/genia/preprocess  # the directory to store the preprocessed data
+ss_cache_dir: data/genia/support_set  # the directory to store the support set cache
+
+labels:
+  DNA: dna
+  RNA: rna
+  protein: protein
+  cell_type: cell type
+  cell_line: cell line
+
+raw_bio: False  # a flag to indicate whether the labels are in BIO format in the raw dataset.(data/*/raw/*)
+raw_label2id:  # the label2id mapping in the raw datasets. (data/*/raw/*)
+  'O': 0,
+  'DNA': 1,
+  'RNA': 2,
+  'protein': 3,
+  'cell_type': 4,
+  'cell_line': 5,
